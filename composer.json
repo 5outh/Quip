@@ -1,0 +1,21 @@
+{
+    "name": "Ben/quip",
+    "description": "A simple query string parser",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benjamin Kovach",
+            "email": "benjamin@roundsphere.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "Quip\\": "src/Quip"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
