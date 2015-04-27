@@ -9,7 +9,7 @@ Say you have the following query:
 
 That's quite a doozy! Quip makes parsing this type of query painfully simple:
 
-```
+```php
 $query = 'q=age<19,gender=male&embeds=snags.offers&includes=age,gender&excludes=whatever&sort=%2bupdated_at,-count'
 
 $quip = (new Quip($query))->parse();
