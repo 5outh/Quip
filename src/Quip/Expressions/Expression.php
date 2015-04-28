@@ -2,6 +2,13 @@
 
 namespace Quip\Expressions;
 
+/**
+ * Class Expression
+ *
+ * Represents a SQL filter that can be parsed out of a REST query
+ *
+ * @package Quip\Expressions
+ */
 class Expression
 {
     const OPERATOR_LTE = '<=';
@@ -11,10 +18,28 @@ class Expression
     const OPERATOR_GT = '>';
     const OPERATOR_EQ = '=';
 
+    /**
+     * @var string
+     */
     protected $lhs;
+
+    /**
+     * @var string
+     */
     protected $rhs;
+
+    /**
+     * @var string
+     */
     protected $operator;
 
+    /**
+     * Construct a new Expression from lhs, operator and rhs
+     *
+     * @param $lhs
+     * @param $operator
+     * @param $rhs
+     */
     public function __construct($lhs, $operator, $rhs)
     {
         $this->lhs = $lhs;

@@ -57,7 +57,5 @@ class QuipTest extends PHPUnit_Framework_TestCase
         $excludes = $quip->getExcludes();
 
         $this->assertEquals(['whatever'], $excludes);
-
-        print_r($quip);
     }
 }

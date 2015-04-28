@@ -9,6 +9,14 @@ use Quip\Exceptions\NoSuchSortException;
 use Quip\Expressions\Expression;
 use Quip\Expressions\ExpressionParser;
 
+/**
+ * Class Quip
+ *
+ * Main class for the Quip library. Constructed with a raw query string
+ * or input array, with methods to parse into a Query object.
+ *
+ * @package Quip
+ */
 class Quip
 {
     /**
@@ -52,7 +60,10 @@ class Quip
         return $this->query;
     }
 
-    private function parseQ()
+    /**
+     * Parse the SQL queries (filters) from the query string
+     */
+    protected function parseQ()
     {
         if ($this->query->has('q')) {
             $exprs = explode(',', $this->query->getRaw('q'));
@@ -63,7 +74,11 @@ class Quip
         }
     }
 
-    private function parseEmbeds()
+
+    /**
+     * Parse the embeds from the query string
+     */
+    protected function parseEmbeds()
     {
         if ($this->query->has('embeds')) {
             $embeds = explode(',', $this->query->getRaw('embeds'));
@@ -74,7 +89,10 @@ class Quip
         }
     }
 
-    private function parseIncludes()
+    /**
+     * Parse the includees from the query string
+     */
+    protected function parseIncludes()
     {
         if ($this->query->has('includes')) {
             $this->query->setIncludes(
@@ -83,7 +101,10 @@ class Quip
         }
     }
 
-    private function parseExcludes()
+    /**
+     * Parse the excludes from the query string
+     */
+    protected function parseExcludes()
     {
         if ($this->query->has('excludes')) {
             $this->query->setExcludes(
@@ -92,7 +113,12 @@ class Quip
         }
     }
 
-    private function parseSorts()
+    /**
+     * Parse the sorts from the query string
+     *
+     * @throws NoSuchSortException
+     */
+    protected function parseSorts()
     {
         if ($this->query->has('sort')) {
             $sorts = explode(',', $this->query->getRaw('sort'));
@@ -148,7 +174,7 @@ class Quip
      *
      * @throws Expressions\Exceptions\InvalidExpressionException
      */
-    private function parseExpression($expr)
+    protected function parseExpression($expr)
     {
         return (new ExpressionParser($expr))->parse();
     }

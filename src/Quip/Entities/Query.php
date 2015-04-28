@@ -2,6 +2,13 @@
 
 namespace Quip\Entities;
 
+/**
+ * Class Query
+ *
+ * Represents a parsed query string
+ *
+ * @package Quip\Entities
+ */
 class Query
 {
     // Embedded objects
@@ -54,6 +61,18 @@ class Query
     public function getRaw($key)
     {
         return $this->rawInput[$key];
+    }
+
+    /**
+     * Alias for `getRaw`
+     *
+     * @param $key
+     *
+     * @return mixed
+     */
+    public function getExtra($key)
+    {
+        return $this->getRaw($key);
     }
 
     /**

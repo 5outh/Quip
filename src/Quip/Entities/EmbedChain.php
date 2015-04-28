@@ -2,6 +2,13 @@
 
 namespace Quip\Entities;
 
+/**
+ * Class EmbedChain
+ *
+ * A "chain" of embeds, i.e. "users.friends"
+ *
+ * @package Quip\Entities
+ */
 class EmbedChain
 {
     protected $chain = [];
