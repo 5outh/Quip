@@ -72,7 +72,11 @@ class Query
      */
     public function getExtra($key)
     {
-        return $this->getRaw($key);
+        if ($this->has($key)) {
+            return $this->getRaw($key);
+        }
+
+        return null;
     }
 
     /**

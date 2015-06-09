@@ -41,7 +41,7 @@ class Quip
      */
     public function parse()
     {
-        $input = [];
+        $input = $this->queryString;
 
         // Parse string if it's not already parsed into an array
         if (is_string($this->queryString)) {
