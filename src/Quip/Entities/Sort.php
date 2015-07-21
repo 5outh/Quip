@@ -6,8 +6,8 @@ use Quip\Exceptions\NoSuchSortException;
 
 class Sort
 {
-    const TYPE_ASC = 'TYPE_ASC';
-    const TYPE_DESC = 'TYPE_DESC';
+    const TYPE_ASC = 'ASC';
+    const TYPE_DESC = 'DESC';
 
     protected $field;
     protected $type;
